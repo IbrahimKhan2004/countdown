@@ -8,7 +8,7 @@
 body {
     font-family: 'Lato', sans-serif;
     color: #ffffff;
-    background-image: url('https://envs.sh/R5l.jpg'); /* <<< Yahaan local 'background.jpg' ya apna URL daalein */
+    background-image: url('https://envs.sh/R5l.jpg'); /* <<< Background image ka URL/path */
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -35,7 +35,7 @@ body {
     position: relative;
     z-index: 2;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.1); /* Optional container background */
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     max-width: 90%; /* Thoda zyada width de sakte hain */
     margin: 20px;
@@ -44,46 +44,11 @@ body {
 h1 {
     font-family: 'Playfair Display', serif;
     font-size: 2.8rem; /* Adjust size if needed */
-    margin-bottom: 15px; /* Reduced margin-bottom */
+    margin-bottom: 30px;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-
-/* === Styles for Names Section START === */
-.names {
-    margin-bottom: 30px; /* Timer se pehle thodi jagah */
-    margin-top: 15px; /* Heading ke baad thodi jagah */
-}
-
-.name-section {
-    margin: 15px 0; /* Har naam ke upar/niche space */
-}
-
-.icon {
-    font-size: 1.5rem; /* Icon ka size */
-    margin-right: 10px; /* Icon aur naam ke beech space */
-    vertical-align: middle; /* Icon ko naam ke saath vertically align karein */
-}
-
-.name {
-    font-family: 'Playfair Display', serif; /* Heading jaisa font */
-    font-size: 1.8rem; /* Naam ka font size */
-    font-weight: normal; /* Normal weight */
-    vertical-align: middle; /* Naam ko icon ke saath vertically align karein */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Thoda shadow */
-}
-
-/* Line between names */
-.line {
-    width: 1px; /* Line ki motai */
-    height: 40px; /* Line ki lambai */
-    background-color: #ffffff; /* Line ka color (safed) */
-    margin: 10px auto; /* Line ko center mein laaye aur upar/niche space de */
-    opacity: 0.7; /* Line ko thoda halka (transparent) banaye */
-}
-/* === Styles for Names Section END === */
-
 
 /* Timer style */
 .timer { /* Class name match karein */
@@ -91,7 +56,7 @@ h1 {
     justify-content: center;
     align-items: baseline;
     flex-wrap: wrap; /* Wrap on small screens */
-    margin-top: 20px; /* Keep or adjust margin from names */
+    margin-top: 20px;
 }
 
 .time-section {
@@ -133,14 +98,6 @@ h1 {
     h1 {
         font-size: 2.2rem;
     }
-    /* Adjust name styles for smaller screens */
-    .name {
-        font-size: 1.6rem;
-    }
-    .icon {
-        font-size: 1.4rem;
-    }
-    /* Adjust timer styles */
     .number {
         font-size: 2rem;
     }
@@ -160,20 +117,6 @@ h1 {
      h1 {
         font-size: 1.8rem;
     }
-    /* Adjust name styles for smaller screens */
-     .names {
-        margin-bottom: 20px;
-    }
-    .name {
-        font-size: 1.5rem; /* Further adjust name size */
-    }
-    .icon {
-        font-size: 1.3rem; /* Further adjust icon size */
-    }
-    .line {
-        height: 30px; /* Shorter line */
-    }
-    /* Adjust timer styles */
     .number {
         font-size: 1.5rem;
     }
