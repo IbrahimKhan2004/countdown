@@ -1,7 +1,7 @@
 // --- CONFIGURATION ---
 // Woh Date Aur Time Jab Se Aapko Counting Shuru Karni Hai
 // Format: "Mahina Din, Saal Ghanta:Minute:Second" (e.g., "January 1, 2023 00:00:00")
-const startDateString = "April 25, 2025 00:00:00"; // <<< Yahaan apni start date daalein
+const startDateString = "April 25, 2025 19:46:00"; // <<< Yahaan apni start date daalein
 // ---------------------
 
 // Average values for calculation (approximations)
