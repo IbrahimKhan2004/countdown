@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Since We Started</title> <!-- Title badal dein -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts (Optional) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <h1>TIME SINCE WE STARTED</h1> <!-- Heading badal dein -->
+        <!-- Aap yahaan naam ya koi aur text daal sakte hain -->
+        <!-- <p class="subtitle">Our Journey Together</p> -->
+
+        <div id="elapsed-time" class="timer">
+             <div class="time-section">
+                <span id="years" class="number">0</span>
+                <span class="label">Years</span>
+            </div>
+             <div class="separator">|</div> <!-- Separator badal sakte hain -->
+             <div class="time-section">
+                <span id="months" class="number">0</span>
+                <span class="label">Months</span>
+            </div>
+             <div class="separator">|</div>
+            <div class="time-section">
+                <span id="weeks" class="number">0</span>
+                <span class="label">Weeks</span>
+            </div>
+             <div class="separator">|</div>
+            <div class="time-section">
+                <span id="days" class="number">0</span>
+                <span class="label">Days</span>
+            </div>
+            <div class="separator">|</div>
+            <div class="time-section">
+                <span id="hours" class="number">00</span>
+                <span class="label">Hours</span>
+            </div>
+            <div class="separator">:</div>
+            <div class="time-section">
+                <span id="minutes" class="number">00</span>
+                <span class="label">Minutes</span>
+            </div>
+            <div class="separator">:</div>
+            <div class="time-section">
+                <span id="seconds" class="number">00</span>
+                <span class="label">Seconds</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="background-music" src="your-song.mp3" autoplay loop>
+        <!-- Yahaan apne music file ka naam ya URL daalein -->
+        Aapka browser audio element support nahi karta.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
