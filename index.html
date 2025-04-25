@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- Aap ise "hi" bhi kar sakte hain agar chahein -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +14,22 @@
     <div class="overlay"></div>
     <div class="container">
         <h1>TIME SINCE WE STARTED</h1> <!-- Heading badal dein -->
-        <!-- Aap yahaan naam ya koi aur text daal sakte hain -->
-        <!-- <p class="subtitle">Our Journey Together</p> -->
 
+        <!-- === Names Section Start === -->
+        <div class="names">
+            <div class="name-section">
+                <span class="icon">👑</span> <!-- Bride ka Icon (Crown Emoji) -->
+                <span class="name">Samiya</span> <!-- <<< Yahaan Bride ka naam likhein -->
+            </div>
+            <div class="line"></div> <!-- Dono naamo ke beech ki line -->
+            <div class="name-section">
+                <span class="icon">♚</span> <!-- Groom ka Icon (King Emoji ya dusra crown) -->
+                <span class="name">Yusuf</span> <!-- <<< Yahaan Groom ka naam likhein -->
+            </div>
+        </div>
+        <!-- === Names Section End === -->
+
+        <!-- Timer Section -->
         <div id="elapsed-time" class="timer">
              <div class="time-section">
                 <span id="years" class="number">0</span>
@@ -53,6 +66,7 @@
                 <span class="label">Seconds</span>
             </div>
         </div>
+        <!-- End of Timer Section -->
     </div>
 
     <!-- Background Music -->
