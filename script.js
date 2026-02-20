@@ -17,12 +17,139 @@ const hoursElement = document.getElementById('hours');
 const minutesElement = document.getElementById('minutes');
 const secondsElement = document.getElementById('seconds');
 const audioElement = document.getElementById('background-music');
+const quoteText = document.getElementById('quote-text');
+const anniversaryCountdown = document.getElementById('anniversary-countdown');
+
+// Quotes array
+const quotes = [
+    "\"My soul recognizes yours; we were made from the same dust.\"",
+    "\"If my heart was a city, you would be every street.\"",
+    "\"I found in you my home and my peace.\"",
+    "\"You are the answer to a prayer I didn't even know I was making.\"",
+    "\"In your light, I learn how to love.\"",
+    "\"Your soul is my favorite place to be.\"",
+    "\"Whatever our souls are made of, yours and mine are the same.\""
+];
+
+let quoteIndex = 0;
+
+function updateQuote() {
+    if (!quoteText) return;
+
+    quoteText.classList.remove('fade-in');
+
+    setTimeout(() => {
+        quoteText.textContent = quotes[quoteIndex];
+        quoteText.classList.add('fade-in');
+        quoteIndex = (quoteIndex + 1) % quotes.length;
+    }, 1500);
+}
+
+// Change quote every 7 seconds
+setInterval(updateQuote, 7000);
+updateQuote();
+
+// Visual Effects: Falling Petals
+function createPetal() {
+    const petal = document.createElement('div');
+    petal.classList.add('petal');
+
+    // Random size
+    const size = Math.random() * 15 + 10;
+    petal.style.width = `${size}px`;
+    petal.style.height = `${size}px`;
+
+    // Random horizontal position
+    petal.style.left = Math.random() * 100 + 'vw';
+
+    // Random animation duration
+    const duration = Math.random() * 5 + 5;
+    petal.style.animationDuration = `${duration}s`;
+
+    // Random opacity
+    petal.style.opacity = Math.random() * 0.5 + 0.2;
+
+    document.body.appendChild(petal);
+
+    // Remove petal after animation ends
+    setTimeout(() => {
+        petal.remove();
+    }, duration * 1000);
+}
+
+// Create petals periodically
+setInterval(createPetal, 300);
+
+function createStars() {
+    const starCount = 50;
+    for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+
+        const size = Math.random() * 3;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+
+        star.style.left = Math.random() * 100 + 'vw';
+        star.style.top = Math.random() * 100 + 'vh';
+
+        const duration = Math.random() * 3 + 2;
+        star.style.setProperty('--duration', `${duration}s`);
+        star.style.animationDelay = `${Math.random() * 5}s`;
+
+        document.body.appendChild(star);
+    }
+}
+
+createStars();
 
 // Start date object banao
 const startDate = new Date(startDateString).getTime();
 
 // Har second timer update karo
-const interval = setInterval(updateElapsedTime, 1000);
+const interval = setInterval(() => {
+    updateElapsedTime();
+    updateAnniversaryCountdown();
+}, 1000);
+
+function updateAnniversaryCountdown() {
+    const now = new Date();
+    const currentYear = now.getFullYear();
+    let nextAnniversary = new Date(currentYear, 3, 25); // April is 3 (0-indexed)
+
+    if (now > nextAnniversary) {
+        nextAnniversary = new Date(currentYear + 1, 3, 25);
+    }
+
+    const diff = nextAnniversary - now;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    anniversaryCountdown.innerHTML = `
+        <div class="time-section">
+            <span class="number">${days}</span>
+            <span class="label">Days</span>
+        </div>
+        <div class="separator">|</div>
+        <div class="time-section">
+            <span class="number">${String(hours).padStart(2, '0')}</span>
+            <span class="label">Hours</span>
+        </div>
+        <div class="separator">:</div>
+        <div class="time-section">
+            <span class="number">${String(minutes).padStart(2, '0')}</span>
+            <span class="label">Mins</span>
+        </div>
+        <div class="separator">:</div>
+        <div class="time-section">
+            <span class="number">${String(seconds).padStart(2, '0')}</span>
+            <span class="label">Secs</span>
+        </div>
+    `;
+}
 
 function updateElapsedTime() {
     const now = new Date().getTime();
@@ -88,3 +215,4 @@ function updateElapsedTime() {
 
 // Initial call to display timer immediately
 updateElapsedTime();
+updateAnniversaryCountdown();
