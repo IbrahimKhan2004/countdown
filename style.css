@@ -172,8 +172,8 @@ h1 {
 }
 
 @keyframes twinkle {
-    0%, 100% { opacity: 0.3; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.2); }
+    0%, 100% { opacity: 0.3; } /* Removed transform: scale(1) — scale removed entirely to eliminate zoom-in/zoom-out visual on background; e.g. scale(1.2) at 50% caused perceived background zoom */
+    50% { opacity: 1; } /* Removed transform: scale(1.2) — this was the cause of the slow zoom effect; only opacity change retained for twinkle */
 }
 
 .separator {
